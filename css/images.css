@@ -1,0 +1,74 @@
+img {
+    user-select: none;
+    border-radius: 12px;
+}
+
+video {
+    border-radius: 12px;
+}
+
+.half-image-container {
+    width: 100%;
+    display: flex;
+    margin: 0 auto;
+}
+
+.project-thumbnail {
+    width: 100%;
+}
+
+.project-header {
+    width: 100%;
+}
+
+.project-image {
+    max-width: 100%;
+    display: flex;
+    margin: 0 auto;
+}
+
+.project-image.half.left {
+    width: 49%;
+    margin: 0 auto 0 0;
+}
+
+.project-image.half.right {
+    width: 49%;
+    margin: 0 0 auto 0;
+}
+
+.tool-image {
+	width: 3em;
+	height: 3em;
+    border-radius: 0px;
+}
+
+.tool-image-container {
+    display: flex;
+    gap: 8px;
+}
+
+@media screen and (max-width: 768px) {
+    .project-thumbnail {
+        max-width: 100%;
+    }
+
+    .half-image-container {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .project-image.half.left {
+        width: 100%;
+        margin: 8px auto;
+    }
+    
+    .project-image.half.right {
+        width: 100%;
+        margin: 8px auto;
+    }
+
+    .project-image {
+        width: 100%;
+    }
+}

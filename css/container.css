@@ -1,0 +1,105 @@
+.body-container {
+    width: 100%;
+    margin: 32px auto;
+}
+
+.project-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 36px 0px;
+}
+
+.card-container {
+    width: 48%;
+    margin: 0;
+}
+
+.project-container {
+    margin: 0 auto;
+}
+
+/* project section container, side by side label with content */
+
+.section-container {
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+.split-section-container {
+    display: flex;
+    gap: 16px;
+    max-width: 1000px;
+}
+
+.highlight-section {
+    flex: 1;
+    background-color: var(--accentgrey);
+    padding: 32px;
+    margin: 8px 0;
+    border-radius: 24px;
+}
+
+.highlight-section.bad {
+    background-color: rgb(255, 227, 227);
+}
+
+.highlight-section.good {
+    background-color: rgb(210, 230, 211);
+}
+
+
+/* text containers */
+.text-container {
+    text-align: left;
+    max-width: 750px;
+    margin: 64px 0px;
+}
+
+.text-container.reg {
+    margin: 64px auto;
+}
+
+.text-container.header {
+    max-width: 100%;
+    margin: 96px 0px 96px;
+}
+
+.text-container.project-header {
+    margin: 0px 0px 48px;
+}
+
+.text-container.label {
+    margin-top: 8px;
+}
+
+.overview-container {
+    display: flex;
+    gap: 48px;
+}
+
+.overview-section-container {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+@media screen and (max-width: 768px) {
+
+    .card-container {
+        width: 100%;
+        margin: 0 auto 2px;
+    }
+
+    .split-section-container {
+        display: block;
+    }
+
+    .text-container.reg {
+        margin: 48px 0px;
+    }
+
+    .text-container.header {
+        margin: 100px 0px 100px;
+    }
+}

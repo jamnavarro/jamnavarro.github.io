@@ -1,0 +1,46 @@
+.dark-divider {
+	width: 100%;
+	height: 1px;
+	background-color: var(--grey);
+    margin: 0 auto;
+}
+
+.line-container {
+    display: flex;
+    width: 100%;
+}
+
+.line-green {
+    height: 2px;
+    width: 100%;
+    background-color: var(--green);
+    position: flex;
+}
+
+.line-yellow {
+    height: 2px;
+    width: 100%;
+    background-color: var(--yellow);
+    position: flex;
+}
+
+.line-pink {
+    height: 2px;
+    width: 100%;
+    background-color: var(--pink);
+    position: flex;
+}
+
+.line-blue {
+    height: 2px;
+    width: 100%;
+    background-color: var(--blue);
+    position: flex;
+}
+
+.line-purple {
+    height: 2px;
+    width: 100%;
+    background-color: var(--purple);
+    position: flex;
+}
