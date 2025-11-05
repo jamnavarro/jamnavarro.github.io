@@ -43,6 +43,11 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+window.addEventListener("pageshow", event => {
+  if (event.persisted) {
+    gsap.set(overlay, { opacity: 0 });
+  }
+});
 
 
 
@@ -51,19 +56,14 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 // animate text container text to fade in
-document.querySelectorAll(".text-container").forEach(container => {
-  let split = SplitText.create(container, {
-    type: "words"
-});
-
-  gsap.from(split.words, {
-    y: -5,
-    autoAlpha: 0,
-    stagger: 0.01,
-    duration: 0.6,
+gsap.utils.toArray(".text-container").forEach(el => {
+  gsap.from(el, {
+    opacity: 0,
+    y: 20,
+    duration: 0.8,
     ease: "power2.out",
     scrollTrigger: {
-      trigger: container,
+      trigger: el,
       start: "top 90%",
       once: true
     }
