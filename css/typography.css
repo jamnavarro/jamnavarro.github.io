@@ -36,7 +36,7 @@ body {
 
 h1, h3, h4, h5, form legend {
     font-family: var(--font-primary);
-    font-weight: 600;
+    font-weight: 500;
 }
 
 /* text size */
@@ -48,9 +48,9 @@ h1 {
 }
 
 h2 {
-    font-family: var(--font-secondary);
+    /* font-family: var(--font-secondary); */
     font-size: var(--text-reg);
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     color: var(--grey);
     margin: 0;
     font-weight: 400;
