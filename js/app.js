@@ -205,33 +205,34 @@ boxes.forEach((box, i) => {
 
 
 // custom cursor
-gsap.set(".cursor", {xPercent: -50, yPercent: -50});
+if (window.matchMedia("(pointer: fine)").matches) {
+  gsap.set(".cursor", {xPercent: -50, yPercent: -50});
 
-let xSetter = gsap.quickSetter(".cursor", "x", "px"),
-    ySetter = gsap.quickSetter(".cursor", "y", "px");
+  let xSetter = gsap.quickSetter(".cursor", "x", "px"),
+      ySetter = gsap.quickSetter(".cursor", "y", "px");
 
-window.addEventListener("mousemove", e => {  
-  xSetter(e.x);
-  ySetter(e.y);
-  xTo(e.clientX);
-  yTo(e.clientY);
-});
-
-
-
-window.addEventListener("mousedown", () => {
-  gsap.to(".cursor", { scale: 0.8, duration: 0.15, ease: "power2.out" });
-  gsap.to(".cursor", { backgroundColor: "var(--purple)", duration: 0.2 });
-});
-
-window.addEventListener("mouseup", () => {
-  gsap.to(".cursor", { scale: 1, duration: 0.15, ease: "power2.out" });
-  gsap.to(".cursor", { backgroundColor: "var(--black)", duration: 0.2 });
-});
+  window.addEventListener("mousemove", e => {  
+    xSetter(e.x);
+    ySetter(e.y);
+    xTo(e.clientX);
+    yTo(e.clientY);
+  });
 
 
 
+  window.addEventListener("mousedown", () => {
+    gsap.to(".cursor", { scale: 0.8, duration: 0.15, ease: "power2.out" });
+    gsap.to(".cursor", { backgroundColor: "var(--purple)", duration: 0.2 });
+  });
 
+  window.addEventListener("mouseup", () => {
+    gsap.to(".cursor", { scale: 1, duration: 0.15, ease: "power2.out" });
+    gsap.to(".cursor", { backgroundColor: "var(--black)", duration: 0.2 });
+  });
+}
+
+
+// nav logo animation on hover
 document.addEventListener("DOMContentLoaded", () => {
   const navLogo = document.querySelector(".nav-logo");
   let bounceTween = null;
