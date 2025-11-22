@@ -30,7 +30,7 @@ video {
 
 .project-image {
     max-width: 100%;
-    display: flex;
+    display: block;
     margin: 0 auto;
 }
 

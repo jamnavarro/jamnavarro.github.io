@@ -10,7 +10,18 @@
     margin: 36px 0px;
 }
 
+.news-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
 .card-container {
+    width: 48%;
+    margin: 0;
+}
+
+.news-card-container {
     width: 48%;
     margin: 0;
 }
@@ -71,6 +82,10 @@
 
 .text-container.label {
     margin-top: 8px;
+}
+
+.text-container.news-label {
+    margin: 8px 0px;
 }
 
 .overview-container {
