@@ -124,7 +124,7 @@
             </div>
 
             <div class="text-container reg">
-                <h2>My role</h2>
+                <h2>Our goals</h2>
                 <h3>We first wanted to understand how users were currently navigating the existing reviewer dashboard.</h3>
                 
                 <div class="split-section-container">
@@ -142,7 +142,7 @@
                         <h4>3. Are there pain points that they may come across in navigating the dashboard?</h4>
                     </div>
                 </div>
-
+                <br>
                 <p>To do this, we found it beneficial to conduct a competitive analysis to identify spaces that UCredit could expand upon as well as guided usability tests with user interviews to directly see how advisors are currently checking requirements and communicating with advisees.</p>
             </div>
 
@@ -150,9 +150,10 @@
                 <h2>Competitive analysis</h2>
                 <h3>Similar platforms were optimized with tools for college advisors, but lacked a focus on peer-to-peer reviewing.</h3>
                 <p>I created reports on two direct competitors on degree management tools, noting their features after attending two live software demos from the companies.</p>
-            
+                <br>
                 <div class="highlight-section">
                     <h4>Stellic</h4>
+
                     <div class="split-section-container">
                         <div class="highlight-section good">
                             <span class="material-symbols-outlined">check_circle</span>
@@ -186,7 +187,7 @@
                         </div>
                     </div>
                 </div>
-
+                <br>
                 <p>These findings were useful in determining potential untapped areas for the reviewer dashboard that the team could explore in the future.</p>
             </div>
 
@@ -194,12 +195,14 @@
                 <h2>Usability testing</h2>
                 <h3>I led two interview sessions and was primary notetaker for four other interviews.</h3>
                 <p>We conducted these via Zoom with four students and three advisors. We tailored 8-9 tasks for both groups to discover their process in navigating the current features of the reviewer dashboard.</p>
+                <br>
+                <img src="/ucredit/images/interviews.png" class="project-image">
             </div>
 
             <div class="text-container reg">
                 <h2>Success metrics</h2>
-                <p>During the study, we noted specific key performance indicators to quantify how users were using the existing dashboard.</p>
-            
+                <h3>During the study, we noted specific key performance indicators to quantify how users were using the existing dashboard.</h3>
+                
                 <div class="split-section-container">
                     <div class="highlight-section">
                         <h4>1. How long did it take for the user to finish a task?</h4>
@@ -218,6 +221,85 @@
 
                 <p>Qualitative KPIs were gathered from any comments or feedback an interview participant made during the study. <i>What did they do? What did they feel? What did they say?</i></p>
                 <p>Post-study, we gathered each participant's consumer effort score (CES), net promoter score (NPS), and scores on a system usability scale (SUS) by asking them to rate some statements on their experience.</p>
+                <br>
+                <h3>(CES) "The reviewer dashboard made it easy for me to communicate with my advisor/advisee."</h3>
+                <img src="/ucredit/images/scale-1.svg" class="project-image">
+                <br>
+                <h3>(NPS) On a scale from 1 to 10, would you recommend this reviewer feature to someone else?</h3>
+                <img src="/ucredit/images/scale-2.svg" class="project-image">
+                <br>
+                <p>From the verbal feedback we received, not all interview participants seemed to be completely satisfied with the existing layout of the dashboard, so we wanted to continue to learn how we might be able to improve the dashboard through our qualitative data.</p>
+            </div>
+
+            <div class="text-container reg">
+                <h2>Affinity diagramming</h2>
+                <h3>After compiling the raw interview data, we organized our findings in an affinity diagram.</h3>
+                <img src="/ucredit/images/affinity-diagram.png" class="project-image">
+                <br>
+                <p>We organized common themes amongst participants, including pain points in navigation, any bugs while accessing information, as well as any points where they had an intuitive experience completing the tasks.</p>
+            </div>
+
+            <div class="text-container reg">
+                <h2>Patterns and insights</h2>
+                <h3>I identified major insights from patterns and outlined potential design solutions to work on.</h3>
+
+                <h3>Search bar functions</h3>
+                <div class="split-section-container">
+                    <div class="highlight-section bad">
+                        <span class="material-symbols-outlined">dangerous</span>
+                        <p>The layout overview of the reviewee list was unintuitive for some users, without filter options to more easily view or customize to find reviewers more easily.</p>
+                    </div>
+                    <div class="highlight-section good">
+                        <span class="material-symbols-outlined">feature_search</span>
+                        <p>Add search bar to allow free search of reviewees. Add a filter sidebar with all options visible for reviewers to immediately see.</p>
+                    </div>
+                </div>
+                <img src="/ucredit/images/search-bar-functions.png" class="project-image">
+                <br>
+                <h3>Organization of reviewees</h3>
+                <div class="split-section-container">
+                    
+                    <div class="highlight-section bad">
+                        <span class="material-symbols-outlined">dangerous</span>
+                        <p>Reviewers were frustrated by the lack of features in organizing their large number of students into groups, sections, or programs.</p>
+                    </div>
+                    <div class="highlight-section good">
+                        <span class="material-symbols-outlined">sort</span>
+                        <p>Include new filter options and allow reviewees to be organized into sections or categories, with default organization as most recently updated.</p>
+                    </div>
+                </div>
+                <img src="/ucredit/images/organization-of-reviewees.png" class="project-image">
+                <br>
+                <h3>User summary</h3>
+                <div class="split-section-container">
+                    <div class="highlight-section bad">
+                        <span class="material-symbols-outlined">dangerous</span>
+                        <p>During research, users expressed issues regarding having separate plans from the same user. Users were also consistently unable to accurately identify when changes or reviews have been made regarding their plans.</p>
+                        <p>For some, viewing user summary information on the screen was difficult due to size.</p>
+                    </div>
+                    <div class="highlight-section good">
+                        <span class="material-symbols-outlined">summarize</span>
+                        <p>Implement separate plans for each student, and allow reviewer options to help students understand changes or feedback on plans. Include wider tracker pop-up window for ease of viewing.</p>
+                    </div>
+                </div>
+                <img src="/ucredit/images/user-summary1.png" class="project-image">
+                <img src="/ucredit/images/user-summary2.png" class="project-image">
+                <br>
+            </div>
+            
+            <div class="text-container reg">
+                <h2>Lessons to learn</h2>
+                <h3>Know the motivations in conducting user research methods.</h3>
+                <p>I understand now from personal experience that interviews are a long and complex endeavor. It's good to be able to explain to yourself and your stakeholders why it's worth spending time and effort on.</p>
+                <br>
+                <h3>Be smart about organizing interviews.</h3>
+                <p>The recruitment and interview process took over two 2-week sprints, which was longer than we had initially anticipated. For future considerations, I know now to always request to interview more people than you expect.</p>
+                <br>
+                <h3>Always justify design decisions.</h3>
+                <p>During this project, my team encouraged me to make sure I back up any solutions I thought of with research. This is a great skill for me to continue building and learn to move away from making isolated design choices that might not be great for the users I'm designing for.</p>
+                <br>
+                <h3>Be proactive about next steps.</h3>
+                <p>Especially for a startup, it's crucial to know what the team should be able to improve next and make this kind of research really count in the same way our secondary research really helped our process. My own possible next steps for my role on the UCredit UX team included in-depth reviewer dashboard wireframing and prototyping, as well as focusing on the interaction between students and trying to increase the collaboration and community of peers on the platform.</p>
             </div>
         </div>
 
