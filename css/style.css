@@ -38,6 +38,10 @@ a {
 	mix-blend-mode: difference;
 }
 
+.material-symbols-outlined {
+	vertical-align: middle;
+}
+
 .transition-overlay {
   position: fixed;
   inset: 0;
