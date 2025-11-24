@@ -14,6 +14,11 @@ a {
 	}
 }
 
+@media (pointer: coarse) {
+	.cursor {
+	  display: none;
+	}
+  }
 
 .cursor {
 	width: 12px;
