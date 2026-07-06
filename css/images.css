@@ -1,10 +1,10 @@
 img {
     user-select: none;
-    border-radius: 12px;
+    /* border-radius: 12px; */
 }
 
 video {
-    border-radius: 12px;
+    /* border-radius: 12px; */
 }
 
 .half-image-container {
@@ -53,6 +53,10 @@ video {
 .tool-image-container {
     display: flex;
     gap: 8px;
+}
+
+.client-logo {
+    padding: 0px 16px;
 }
 
 @media screen and (max-width: 768px) {
