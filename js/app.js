@@ -134,6 +134,95 @@ document.querySelectorAll(".project-thumbnail").forEach(element => {
 
 
 
+// infinite carousel loop drag interaction
+const carousel = document.querySelector(".carousel");
+const track = document.querySelector(".carousel-container");
+
+
+if (carousel) {
+  let isDown = false;
+  let startX;
+  let startScroll;
+  
+  let lastX = 0;
+  let lastTime = 0;
+  let inertiaVelocity = 0;
+  let inertiaAnimation = null;
+  
+
+  carousel.addEventListener("mousedown", e => {
+    isDown = true;
+
+    cancelAnimationFrame(inertiaAnimation);
+
+    startX = e.pageX;
+    startScroll = carousel.scrollLeft;
+
+    lastX = e.pageX;
+    lastTime = performance.now();
+  });
+  
+  window.addEventListener("mouseup", () => {
+    if (!isDown) return;
+
+    isDown = false;
+    startInertia();
+  });
+
+  carousel.addEventListener("mousemove", e => {
+    if (!isDown) return;
+
+    e.preventDefault();
+
+    carousel.scrollLeft = startScroll - (e.pageX - startX);
+
+    // clamp to bounds (optional safety)
+    const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+    carousel.scrollLeft = Math.max(0, Math.min(carousel.scrollLeft, maxScroll));
+
+    const now = performance.now();
+    const dt = now - lastTime;
+
+    if (dt > 0) {
+        inertiaVelocity = (lastX - e.pageX) / dt * 8;
+    }
+
+    lastX = e.pageX;
+    lastTime = now;
+  });
+
+  function startInertia() {
+    const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+
+    function update() {
+        carousel.scrollLeft += inertiaVelocity;
+
+        inertiaVelocity *= 0.95; // friction
+
+        // clamp at edges instead of wrapping
+        if (carousel.scrollLeft < 0) {
+            carousel.scrollLeft = 0;
+            inertiaVelocity = 0;
+        }
+
+        if (carousel.scrollLeft > maxScroll) {
+            carousel.scrollLeft = maxScroll;
+            inertiaVelocity = 0;
+        }
+
+        if (Math.abs(inertiaVelocity) > 0.2) {
+            inertiaAnimation = requestAnimationFrame(update);
+        }
+    }
+
+    inertiaAnimation = requestAnimationFrame(update);
+  }
+
+}
+
+
+
+
 // underline on link hover
 document.addEventListener("DOMContentLoaded", () => {
   const navbar = document.querySelector(".navbar");
@@ -214,11 +303,7 @@ if (window.matchMedia("(pointer: fine)").matches) {
   window.addEventListener("mousemove", e => {  
     xSetter(e.x);
     ySetter(e.y);
-    xTo(e.clientX);
-    yTo(e.clientY);
   });
-
-
 
   window.addEventListener("mousedown", () => {
     gsap.to(".cursor", { scale: 0.8, duration: 0.15, ease: "power2.out" });
@@ -229,33 +314,55 @@ if (window.matchMedia("(pointer: fine)").matches) {
     gsap.to(".cursor", { scale: 1, duration: 0.15, ease: "power2.out" });
     gsap.to(".cursor", { backgroundColor: "var(--black)", duration: 0.2 });
   });
+
+
+  const hoverElements = document.querySelectorAll("a, button, .clickable");
+  
+  hoverElements.forEach(el => {
+    el.addEventListener("mouseenter", () => {
+      gsap.to(".cursor", { 
+        scale: 1.5, 
+        mixBlendMode: "difference",
+        backgroundColor: "#fff", 
+        duration: 0.3
+      });
+    });
+
+    el.addEventListener("mouseleave", () => {
+      gsap.to(".cursor", { 
+        scale: 1, 
+        mixBlendMode: "normal", 
+        backgroundColor: "var(--black)", 
+        duration: 0.3 
+      });
+    });
+  });
 }
 
 
 // nav logo animation on hover
 document.addEventListener("DOMContentLoaded", () => {
   const navLogo = document.querySelector(".nav-logo");
-  let bounceTween = null;
 
-  navLogo.addEventListener("mouseenter", () => {
-    if (bounceTween) return;
-
-    bounceTween = gsap.to(navLogo, {
-      y: -5,
-      duration: 0.5,
-      ease: "power2.inOut",
-      yoyo: true,
-      repeat: -1
+  if (navLogo) {
+    let bounceTween = null;
+  
+    navLogo.addEventListener("mouseenter", () => {
+      if (bounceTween) return;
+  
+      bounceTween = gsap.to(navLogo, {
+        y: -5,
+        duration: 0.5,
+        yoyo: true,
+        repeat: -1
+      });
     });
-  });
-
-  navLogo.addEventListener("mouseleave", () => {
-    if (bounceTween) {
-      bounceTween.kill(); // stop the animation
+  
+    navLogo.addEventListener("mouseleave", () => {
+      if (bounceTween) bounceTween.kill();
       bounceTween = null;
-      gsap.to(navLogo, { y: 0, duration: 0.3, ease: "power1.out" }); // reset
-    }
-  });
+    });
+  }
 });
 
 
