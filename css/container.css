@@ -241,8 +241,8 @@
         margin: 100px 0px 100px;
     }
 
-    .overview-container {
+    /* .overview-container {
         flex-direction: column;
         gap: 12px;
-    }
+    } */
 }

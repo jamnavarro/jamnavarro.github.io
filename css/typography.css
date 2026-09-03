@@ -14,10 +14,10 @@
 
     /* set base values */
     --text-base-size: 1em;
-    --text-scale-ratio: 1.2;
+    --text-scale-ratio: 1.1;
 
     /* type scale */
-    --text-reg: calc(var(--text-base-size));
+    --text-reg: calc(1em * pow(var(--text-scale-ratio), -1));
     --text-md: calc(1em * var(--text-scale-ratio));
     --text-lg: calc(1em * pow(var(--text-scale-ratio), 2));
     --text-xl: calc(1em * pow(var(--text-scale-ratio), 3));
@@ -43,9 +43,11 @@ h1, h4, h5, form legend {
 /* text size */
 
 h1 {
-    font-size: var(--text-md);
-    margin: 4px 0px;
-    line-height: 1.1em;
+    font-weight: 300;
+    font-size: var(--text-xxl);
+    margin: 2px 0px 12px;
+    line-height: 1.3em;
+    color: var(--grey);
 }
 
 h2 {
@@ -58,7 +60,7 @@ h2 {
 
 h3 {
     font-weight: 300;
-    font-size: var(--text-lg);
+    font-size: var(--text-xxl);
     margin: 2px 0px 12px;
     line-height: 1.3em;
 }
@@ -76,7 +78,7 @@ h5 {
 }
 
 p {
-    font-size: var(--text-reg);
+    font-size: var(--text-md);
     font-weight: 300;
     margin: 8px 0px;
     line-height: 1.4em;
